@@ -1,9 +1,5 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-interface QueryParams {
-  name: string;
-  msg: string;
-}
 
 const BASE_URL = "https://recruto-test-task.vercel.app";
 
@@ -25,10 +21,8 @@ async function fetchHello(name: string, msg: string) {
   }
 }
 function App() {
-  const [params, setParams] = useState<QueryParams>({
-    name: "Recruto",
-    msg: "Давай дружить",
-  });
+  const [serverResponse, setServerResponse] = useState<string>("");
+
 
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
@@ -38,7 +32,7 @@ function App() {
     const getData = async () => {
       try {
         const result = await fetchHello(name, msg);
-        setParams({ name, msg });
+        setServerResponse(result); 
       } catch (error) {
         console.log(
           error instanceof Error ? error.message : "Something went wrong"
@@ -50,7 +44,7 @@ function App() {
   return (
     <>
       <div>
-        Hello, {params.name}! {params.msg}!
+        {serverResponse}
       </div>
     </>
   );
