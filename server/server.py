@@ -1,8 +1,17 @@
 from fastapi import FastAPI,Query,HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+
 
 ERROR_MESSAGE = "Params name and msg are invalid"
 
 app = FastAPI()  
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 def isParamsValid(name,msg) -> bool:
     return not (name == "" or msg == "") 
@@ -14,3 +23,5 @@ async def hello(name: str = Query("Recruto"),
         return f"Hello, {name}! {msg}!"
     else:
         raise HTTPException(400,ERROR_MESSAGE)
+    
+handler = app

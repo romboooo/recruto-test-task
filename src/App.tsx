@@ -1,10 +1,10 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 
-const BASE_URL = "https://recruto-test-task.vercel.app";
-
+// const BASE_URL = "api";
+// 
 async function fetchHello(name: string, msg: string) {
-  const url = `${BASE_URL}/?name=${encodeURIComponent(
+  const url = `api/?name=${encodeURIComponent(
     name
   )}&message=${encodeURIComponent(msg)}`;
   try {
