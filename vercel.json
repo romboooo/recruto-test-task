@@ -9,8 +9,8 @@
         "runtime": "python3.10"
       }
     },
-{
-      "src": "frontend/vite.config.js",  
+    {
+      "src": "vite.config.ts",  
       "use": "@vercel/vite",
       "config": {
         "outputDirectory": "dist"  
