@@ -29,7 +29,9 @@ function App() {
 
     const getData = async () => {
       try {
-        const result = await fetchHello(name, msg);
+       let result = await fetchHello(name, msg);
+       result = result.replace(/^"|"$/g, '');
+
         setServerResponse(result); 
       } catch (error) {
         console.log(
@@ -40,11 +42,46 @@ function App() {
     getData();
   }, []);
   return (
-    <>
-      <div>
-        {serverResponse}
-      </div>
-    </>
+    <div className="app-container">
+      <div className="content">{serverResponse}</div>
+      
+      <footer className="footer">
+        <div className="footer-center">Роман Бурейко</div>
+        <div className="footer-center">
+          <a 
+            href="https://github.com/romboooo" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
+            Мой гитхаб
+          </a>
+          <a 
+            href="https://github.com/romboooo/recruto-test-task" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
+            Текущая репа
+          </a>
+          <a 
+            href="https://t.me/romboooo" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
+            Мой тг
+          </a>
+          <a 
+            href="mailto:romboooo@yandex.ru" 
+            className="footer-link"
+          >
+            Почта
+          </a>
+        </div>
+        <div className="footer-center">2025</div>
+      </footer>
+    </div>
   );
 }
 

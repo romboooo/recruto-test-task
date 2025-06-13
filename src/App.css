@@ -38,5 +38,41 @@
 }
 
 .read-the-docs {
-  color: #888;
+  color: #242424;
 }
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #242424;
+  border-top: 1px solid #242426;
+}
+
+.footer-center {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.87);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
