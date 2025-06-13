@@ -46,7 +46,6 @@ function App() {
       <div className="content">{serverResponse}</div>
       
       <footer className="footer">
-        <div className="footer-center">Роман Бурейко</div>
         <div className="footer-center">
           <a 
             href="https://github.com/romboooo" 
@@ -79,7 +78,6 @@ function App() {
             Почта
           </a>
         </div>
-        <div className="footer-center">2025</div>
       </footer>
     </div>
   );
