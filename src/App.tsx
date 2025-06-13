@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 async function fetchHello(name: string, msg: string) {
   const url = `api/?name=${encodeURIComponent(
     name
-  )}&message=${encodeURIComponent(msg)}`;
+  )}&msg=${encodeURIComponent(msg)}`;
   try {
     const response = await fetch(url);
     if (!response.ok) {
