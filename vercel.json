@@ -8,13 +8,6 @@
         "maxLambdaSize": "15mb",
         "runtime": "python3.10"
       }
-    },
-    {
-      "src": "vite.config.ts",  
-      "use": "@vercel/vite",
-      "config": {
-        "outputDirectory": "dist"  
-      }
     }
   ],
   "routes": [
@@ -22,17 +15,9 @@
       "src": "/api(.*)",
       "dest": "server/server.py",
       "methods": ["GET"]
-    },
- {
-      "src": "/assets/(.*)",
-      "headers": {
-        "Cache-Control": "public, max-age=31536000, immutable"
-      },
-      "dest": "dist/assets/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "dist/index.html"
     }
+  ],
+    "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
