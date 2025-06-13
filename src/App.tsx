@@ -1,8 +1,6 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 
-// const BASE_URL = "api";
-// 
 async function fetchHello(name: string, msg: string) {
   const url = `api/?name=${encodeURIComponent(
     name
