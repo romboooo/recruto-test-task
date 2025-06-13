@@ -25,6 +25,4 @@ async def hello(
     else:
         raise HTTPException(400, ERROR_MESSAGE)
 
-@app.get("/")
-async def health_check():
-    return {"status": "working", "framework": "FastAPI"}
+
