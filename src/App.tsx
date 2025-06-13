@@ -25,7 +25,7 @@ function App() {
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
     const name = queryParams.get("name") || "Recruto";
-    const msg = queryParams.get("message") || "Давай дружить";
+    const msg = queryParams.get("msg") || "Давай дружить";
 
     const getData = async () => {
       try {
